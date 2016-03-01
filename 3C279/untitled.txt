@@ -1,0 +1,11 @@
+import numpy as np
+import pylab as P
+import urllib2
+import matplotlib.pyplot as plt
+
+url='http://www.astro.yale.edu/smarts/glast/tables/3C279.tab'
+open("3c279.dat",'wb').write(urllib2.urlopen(url).read())
+
+jdstart,bjdstart,bmag,berr,vjdstart,vmag,verr,rjdstart,rmag,rerr,jjdstart,jmag,jerr,kjdstart,kmag,kerr = np.genfromtxt('3c279.dat', unpack=True,dtype=float,skip_header=3)
+
+print jdstart
